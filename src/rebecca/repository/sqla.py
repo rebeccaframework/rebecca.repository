@@ -37,7 +37,7 @@ class SQLARepository(object):
         return q
 
     def iter_slice(self, s):
-        q = self.base_query()
+        q = self.base_query().order_by(*self.orders)
         return q[s.start:s.stop]
 
     def __getitem__(self, key):
@@ -53,5 +53,5 @@ class SQLARepository(object):
 
     def __iter__(self):
         # TODO: support order
-        return iter(self.base_query())
+        return iter(self.base_query().order_by(*self.orders))
 

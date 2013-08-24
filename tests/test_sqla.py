@@ -91,6 +91,18 @@ class TestSQLARepository(object):
 
         assert result == persons
 
+    def test_iter_with_order(self, target, dbsession):
+        person_repository = target(Person, 'id', dbsession,
+                                   orders=[Person.name])
+        for name in (u"xyz", u"abc"):
+            person = Person(name=name)
+            dbsession.add(person)
+        dbsession.flush()
+        result = list(person_repository)
+
+        assert [p.name for p in result] == [u"abc", u"xyz"]
+
+
     def test_get(self, target, dbsession):
         person_repository = target(Person, 'id', dbsession)
         person = Person()
