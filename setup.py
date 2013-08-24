@@ -20,7 +20,7 @@ tests_require = [
 
 
 long_description = (
-    open('README.txt').read()
+    open('README.rst').read()
     + '\n' +
     'Contributors\n'
     '============\n'
@@ -40,10 +40,10 @@ setup(name='rebecca.repository',
         "Programming Language :: Python",
         ],
       keywords='',
-      author='',
-      author_email='',
-      url='http://svn.plone.org/svn/collective/',
-      license='gpl',
+      author='Atsushi Odagiri',
+      author_email='aodagx@gmail.com',
+      url='https://github.com/rebeccaframework/rebecca.repository',
+      license='MIT',
       packages=find_packages('src'),
       package_dir = {'': 'src'},
       namespace_packages=['rebecca'],
@@ -53,6 +53,7 @@ setup(name='rebecca.repository',
       tests_require=tests_require,
       extras_require={
           "testing": tests_require,
+          "dev": ["docutils"],
       },
       entry_points="""
       # -*- Entry points: -*-
