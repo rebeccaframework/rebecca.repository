@@ -3,6 +3,8 @@ python:
   - "2.7"
   - "3.3"
 # command to install dependencies
-install: "pip install -r requirements.txt --use-mirrors"
+install:
+ - "pip install -r requirements.txt --use-mirrors"
+ - "pip install -e .[testing]"
 # command to run tests
 script: py.test
