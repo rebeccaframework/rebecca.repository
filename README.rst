@@ -1,5 +1,8 @@
 .. contents::
 
+.. image:: https://travis-ci.org/rebeccaframework/rebecca.repository.png?branch=master
+   :target: https://travis-ci.org/rebeccaframework/rebecca.repository
+
 rebecca.repository
 ===========================
 
