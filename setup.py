@@ -7,6 +7,7 @@ requires = [
     "setuptools",
     "pyramid",
     "sqlalchemy",
+    "six",
 ]
 
 tests_require = [
