@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.2 (unreleased)
+-----------------------
+
+- added pyramid config directive and venusian decorator
+
 0.1.1 (2013-08-24)
 -----------------------
 

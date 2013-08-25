@@ -62,3 +62,14 @@ conditional repository
 repository can configure to set condition::
 
   person_repository = SQALRepository(Person, Person.id, DBSession(), condition=Person.age>30)
+
+
+pyramid directive
+----------------------------------------------
+
+rebecca.repository provides directive for pyramid registry.::
+
+  config.include('rebecca.repository')
+  config.add_repository(person_repository, 'person')
+
+
