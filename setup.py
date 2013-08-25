@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.0'
+version = '0.2'
 
 requires = [
     "setuptools",
@@ -38,6 +38,10 @@ setup(name='rebecca.repository',
       # http://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         "Programming Language :: Python",
+        "Programming Language :: Python :: 2.7",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.3",
+        "Framework :: Pyramid",
         ],
       keywords='',
       author='Atsushi Odagiri',
