@@ -79,4 +79,7 @@ or using repository_config decorator::
       def __init__(self, dbsession):
           super(PersonRepository, self).__init__(Person, Person.id, DBSession)
 
+To get registered repositories, use get_repository::
+
+  get_repository(request, 'person')
 
