@@ -64,12 +64,19 @@ repository can configure to set condition::
   person_repository = SQALRepository(Person, Person.id, DBSession(), condition=Person.age>30)
 
 
-pyramid directive
+pyramid integration
 ----------------------------------------------
 
 rebecca.repository provides directive for pyramid registry.::
 
   config.include('rebecca.repository')
   config.add_repository(person_repository, 'person')
+
+or using repository_config decorator::
+
+  @repository_config(name="person", args=(DBSession,))
+  class PersonRepository(SQLARepository):
+      def __init__(self, dbsession):
+          super(PersonRepository, self).__init__(Person, Person.id, DBSession)
 
 
