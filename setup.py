@@ -5,8 +5,8 @@ version = '0.0'
 
 requires = [
     "setuptools",
-    "pyramid",
     "sqlalchemy",
+    "zope.interface",
     "six",
 ]
 
@@ -15,6 +15,7 @@ tests_require = [
     "pytest-cov",
     "coverage",
     "testfixtures",
+    "pyramid",
 ]
 
 
@@ -53,6 +54,7 @@ setup(name='rebecca.repository',
       extras_require={
           "testing": tests_require,
           "dev": ["docutils"],
+          "pyramid": ["pyramid"],
       },
       entry_points="""
       # -*- Entry points: -*-
