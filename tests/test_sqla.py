@@ -79,6 +79,22 @@ class TestSQLARepository(object):
         assert len(result) == 10
         assert result == persons[10:20]
 
+    def test_get_many(self, target, dbsession):
+        person_repository = target(Person, 'id', dbsession)
+        persons = []
+        for i in range(100):
+            person = Person()
+            persons.append(person)
+            dbsession.add(person)
+        dbsession.flush()
+
+        keys = [p.id for p in persons[10:20]]
+
+        result = person_repository.get_many(keys)
+
+        assert len(result) == 10
+        assert result == persons[10:20]
+
     def test_iter(self, target, dbsession):
         person_repository = target(Person, 'id', dbsession)
         persons = []
