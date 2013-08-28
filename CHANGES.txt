@@ -1,10 +1,11 @@
 Changelog
 =========
 
-0.3 (unreleased)
+0.3 (2013-08-29)
 --------------------------
 
 - added repository factory API
+- added get_many method
 
 0.2 (2013-08-25)
 -----------------------
