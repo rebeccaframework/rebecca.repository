@@ -41,7 +41,7 @@ Get repository::
 this repository for Person model.
 To get person, use Person.id as key.
 
-basic dict interface
+repository interface
 ---------------------------------------
 
 create object for demonstration::
@@ -56,6 +56,10 @@ A repository has dict like interface::
   person_repository[person.id]
   person_repository.get(person.id)
 
+and utility methods::
+
+  person_repository.get_many([1, 2, 3])
+  new_person = person_repository.new_item()
 
 conditional repository
 ------------------------------------------
