@@ -30,6 +30,7 @@ Implement your model by SQLAlchemy::
       id = Column(Integer, primary_key=True)
       name = Column(Unicode(255))
       age = Column(Integer, default=0)
+      job = Column(Unicode(255))
 
 Get repository::
 
@@ -77,9 +78,40 @@ or using repository_config decorator::
   @repository_config(name="person", args=(DBSession,))
   class PersonRepository(SQLARepository):
       def __init__(self, dbsession):
-          super(PersonRepository, self).__init__(Person, Person.id, DBSession)
+          super(PersonRepository, self).__init__(Person, Person.id, dbsession)
 
 To get registered repositories, use get_repository::
 
   get_repository(request, 'person')
 
+
+repository factory
+---------------------------------------------------------
+
+If you pass the parameters during request time, use factory.
+
+::
+
+  class JobPersonRepository(SQLARepository):
+      def __init__(self, db_session, job):
+          super(JobPersonRepository, self).__init__(Person, Person.id, dbsession,
+                                                    condition=Person.job==job)
+
+
+The parameter ``job`` will be passed from request attribute.
+
+To register repository factory, add_repository_factory directive::
+
+  config.add_repository_factory(JobPersonRepository, "job-person", args=(DBSession,))
+
+or repository_factory_config decorator::
+
+  @repository_factory_config("job-person", args=(DBSession,))
+  class JobPersonRepository(SQLARepository):
+      ....
+
+
+To create repository from registered factory, call create_repository API::
+
+  job = request.matchdict["job"]
+  repository = create_repository("person", args=(job,))
