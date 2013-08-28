@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.3 (unreleased)
+--------------------------
+
+- added repository factory API
+
 0.2 (2013-08-25)
 -----------------------
 

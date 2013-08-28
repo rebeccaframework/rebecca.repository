@@ -13,3 +13,9 @@ class IRepository(Interface):
     def new_item():
         """ new item within repository
         """
+
+class IRepositoryFactory(Interface):
+
+    def __call__(*args, **kwargs):
+        """ create repository
+        """
