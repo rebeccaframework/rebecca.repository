@@ -58,6 +58,5 @@ class SQLARepository(object):
         return self.query_many(keys).all()
 
     def __iter__(self):
-        # TODO: support order
         return iter(self.base_query().order_by(*self.orders))
 

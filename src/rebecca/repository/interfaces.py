@@ -10,6 +10,10 @@ class IRepository(Interface):
         """ get item safely
         """
 
+    def get_many(keys):
+        """ get items
+        """
+
     def new_item():
         """ new item within repository
         """
