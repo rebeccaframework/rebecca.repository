@@ -5,7 +5,6 @@ version = '0.3'
 
 requires = [
     "setuptools",
-    "sqlalchemy",
     "zope.interface",
     "six",
 ]
@@ -59,6 +58,7 @@ setup(name='rebecca.repository',
           "testing": tests_require,
           "dev": ["docutils"],
           "pyramid": ["pyramid"],
+          "sqlalchemy": ["sqlalchemy"],
       },
       entry_points="""
       # -*- Entry points: -*-
