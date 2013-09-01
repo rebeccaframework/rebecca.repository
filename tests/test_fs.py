@@ -58,7 +58,8 @@ class TestFileSystemRepository(object):
     def test_new_item(self, target, tempdir):
         repository = target(tempdir.path)
 
-        with repository.new_item('testing', b'aaaaaaaaa') as item:
-            pass
+        item = repository.new_item('testing', b'aaaaaaaaa')
 
+        assert item.key == "testing"
+        assert item.data == b"aaaaaaaaa"
         assert tempdir.read('testing') == b'aaaaaaaaa'

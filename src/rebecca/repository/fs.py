@@ -8,17 +8,19 @@ from .interfaces import IRepository
 
 
 class Item(object):
-    def __init__(self, filename, data):
-        self.filename = filename
+    def __init__(self, key, data, repository):
+        self.key = key
+        self.repository = repository
         self.data = data
 
-    def __enter__(self):
-        self.f = open(self.filename, "wb")
-        self.f.write(self.data)
-        return self.f
+    @property
+    def data(self):
+        return self._data
 
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        self.f.close()
+    @data.setter
+    def data(self, value):
+        self.repository._write(self.key, value)
+        self._data = value
 
 @implementer(IRepository)
 class FileSystemRepository(object):
@@ -46,4 +48,10 @@ class FileSystemRepository(object):
             yield self.get(key)
 
     def new_item(self, key, data):
-        return Item(os.path.join(self.directory, key), data)
+        return Item(key, data, self)
+
+    def _write(self, key, data):
+        filename = os.path.join(self.directory, key)
+
+        with open_file(filename, "wb") as f:
+            return f.write(data)
