@@ -5,6 +5,7 @@ Changelog
 
 - onmemory repository (yet)
 - file repository(yet)
+- new item context manager(yet)
 
 0.3 (2013-08-29)
 --------------------------
