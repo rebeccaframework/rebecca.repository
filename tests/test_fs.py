@@ -54,3 +54,11 @@ class TestFileSystemRepository(object):
         result = list(repository.get_many(['test1.txt', 'test2.txt']))
 
         assert result == [b'abcde', b'fghi']
+
+    def test_new_item(self, target, tempdir):
+        repository = target(tempdir.path)
+
+        with repository.new_item('testing') as item:
+            item.write(b'aaaaaaaaa')
+
+        assert tempdir.read('testing') == b'aaaaaaaaa'
