@@ -39,7 +39,7 @@ class TestFileSystemRepository(object):
 
         assert result == b'abcde'
 
-    def test_get_item_key_error(self, target, tempdir):
+    def test_get_key_error(self, target, tempdir):
         repository = target(tempdir.path)
 
         result = repository.get('test.txt')
@@ -58,7 +58,7 @@ class TestFileSystemRepository(object):
     def test_new_item(self, target, tempdir):
         repository = target(tempdir.path)
 
-        with repository.new_item('testing') as item:
-            item.write(b'aaaaaaaaa')
+        with repository.new_item('testing', b'aaaaaaaaa') as item:
+            pass
 
         assert tempdir.read('testing') == b'aaaaaaaaa'
