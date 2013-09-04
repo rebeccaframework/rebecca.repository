@@ -7,7 +7,7 @@ WebOb==1.2.3
 py==1.4.15
 pyramid==1.4.3
 pytest==2.3.5
-repoze.filesafe==2.0b1
+-e git+https://github.com/repoze/repoze.filesafe.git@9fd41cac7503ca534f52b50e6335123e26485218#egg=repoze.filesafe-2.0b1
 repoze.lru==0.6
 six==1.3.0
 testfixtures==3.0.1
