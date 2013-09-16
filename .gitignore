@@ -9,3 +9,6 @@ results.xml
 htmlcov
 *.egg-info
 *.py[co]
+/.tox
+/dist
+/.idea
