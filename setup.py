@@ -4,7 +4,7 @@ import os
 
 py3 = sys.version_info.major >= 3
 
-version = '0.4'
+version = '0.0'
 
 requires = [
     "setuptools",
