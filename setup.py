@@ -4,7 +4,7 @@ import os
 
 py3 = sys.version_info.major >= 3
 
-version = '0.3'
+version = '0.4'
 
 requires = [
     "setuptools",
@@ -19,12 +19,6 @@ tests_require = [
     "testfixtures",
     "pyramid",
 ]
-
-fs_require = []
-if py3:
-    fs_require.append("repoze.filesafe>=2.0b2")
-else:
-    fs_require.append("repoze.filesafe")
 
 long_description = (
     open('README.rst').read()
@@ -67,7 +61,7 @@ setup(name='rebecca.repository',
           "dev": ["docutils"],
           "pyramid": ["pyramid"],
           "sqlalchemy": ["sqlalchemy"],
-          "fs": fs_require,
+          "fs": ["repoze.filesafe"],
       },
       entry_points="""
       # -*- Entry points: -*-
