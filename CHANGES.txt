@@ -4,12 +4,15 @@ Changelog
 0.5 (unreleased)
 -----------------------------
 
-- support mongodb
+- support mongodb(yet)
+- added RepositoryWrapper API
+- added OnMemoryRepository API
+
 
 0.4 (2013-09-22)
 ----------------------------
 
-- file repository(yet)
+- file repository
 
 0.3 (2013-08-29)
 --------------------------
