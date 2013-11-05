@@ -5,6 +5,7 @@ Changelog
 -----------------------------
 
 - support mongodb(yet)
+- support S3(yet)
 - added RepositoryWrapper API
 - added OnMemoryRepository API
 
